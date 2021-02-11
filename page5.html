@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Recipes</title>
+
+
+
+  <meta name="color-scheme" content="white" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+ 
+
+ 
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+
+</head>
+
+<body>
+  <app-root>
+
+    <ion-app>
+
+      <ion-header>
+        <!--making the toolbar rounded-->
+          <ion-toolbar color="greenish" style="border-radius:0 0 10px 10px;">
+
+              <ion-title>HealthyDiet</ion-title>
+
+          </ion-toolbar>
+
+      </ion-header>
+
+      <ion-content>
+
+        <ion-list>
+        <!--"Recipes", name of the page, no actual button-->
+        <ion-button color="greenish" style=" margin: 90px 125px 50px 125px" size="block"> Recipes</ion-button>
+        
+        <!--inputting type of meal-->
+        <ion-item style=" margin: 50px 30px 0 30px;">
+
+          <ion-label position="floating" style="color: #7eb788;"><i>Type of meal</i></ion-label>
+          <ion-select ></ion-select>
+          
+        </ion-item>
+        
+        <!--inputting ingredients/recipe name-->
+        <ion-item style="margin: 50px 30px 0 30px;">
+
+          <ion-label position="floating" style="color: #7eb788;"><i>Ingredients/Recipe Name</i></ion-label>
+          <ion-input></ion-input>
+
+        </ion-item>
+
+        <!--inputting number of calories (optional)-->
+        <ion-item style="margin: 40px 30px 0 30px;">
+
+          <ion-label position="floating" style="color: #7eb788;"><i>Number of calories</i></ion-label>
+          <ion-input ></ion-input>
+
+        </ion-item>
+
+      </ion-list>
+
+        <!--submit button-->
+        <ion-button color="greenish" style="border-radius:5px; margin: 80px 125px 30px 125px;" size="block" href="page2.html"> Submit</ion-button>
+
+        <ion-list>
+
+          <!--output of the function above, user can select the desirable output-->
+          <ion-item style="margin: 0 20px 0 5px;">
+
+           <ion-label color="greenish" > Pasta Carbonara, dinner, 500kcal</ion-label>
+            <ion-select></ion-select>
+
+          </ion-item>
+
+
+        </ion-list>
+       <!--tabs-->
+        <ion-tabs color="greenish">
+          <ion-tab-bar slot="bottom" color="greenish" style="border-radius:10px 10px 0 0; border-color: #7eb788; padding:14px;">
+            
+            <!--Progress page-->
+            <ion-tab-button>
+                <ion-icon name="stats-chart" color="light"></ion-icon>
+                <ion-label color="light">Progress</ion-label>
+            </ion-tab-button>
+
+            <!--Recipes page-->
+            <ion-tab-button>
+                <ion-icon name="fast-food" color="light"></ion-icon>
+                <ion-label color="light">Recipes</ion-label>
+            </ion-tab-button>
+
+            <!--Food Diary-->
+            <ion-tab-button>
+                <ion-icon name="book" color="light"></ion-icon>
+                <ion-label color="light">Food Diary</ion-label>
+            </ion-tab-button>
+
+        </ion-tab-bar>
+        
+    </ion-tabs>
+
+        </ion-tabs>
+   
+            </ion-content>
+            </ion-app>
+            
+  </app-root>
+</body>
+
+</html>
