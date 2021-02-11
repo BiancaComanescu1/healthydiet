@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Goal(3)</title>
+
+
+
+  <meta name="color-scheme" content="white" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+ 
+
+ 
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+
+</head>
+
+<body>
+  <app-root>
+
+    <ion-app>
+
+      <ion-header>
+        <!--making the toolbar rounded-->
+          <ion-toolbar color="greenish" style="border-radius:0 0 10px 10px;">
+
+              <ion-title>Welcome, User Name!</ion-title>
+
+          </ion-toolbar>
+
+      </ion-header>
+
+      <ion-content>
+
+        <ion-list>
+          <!--not an acutal button, just the display of the goal information which was already added by the user-->
+          <ion-button id="button"color="greenish" style=" margin: 90px 125px 50px 125px" size="block"> 55kg</ion-button>
+
+          <ion-item style=" margin: 50px 30px 0 30px;">
+            <!--display of current weight which was added by the user previously-->
+            <ion-label  style="color: #7eb788;" >Current weight: 70kg</ion-label>
+          
+         </ion-item>
+        
+        <ion-item style="margin: 50px 30px 0 30px;">
+          <!--the user can overwrite the current weight in this input field-->
+          <ion-label position="floating" style="color: #7eb788;"><i>Edit your current weight</i></ion-label>
+          <ion-input ></ion-input>
+          <!--the information will be overwritten by pressing this button-->
+          <ion-button color="greenish" style="margin:0 0 10px 250px;" >OK</ion-button>
+          
+
+        </ion-item>
+      </ion-list>
+      <!--future button which will bring the user back in case they want to change the goal-->
+        <ion-img src="pics/back.png" style="width:50px; height:60px; margin: 180px 0 0 40px;"></ion-img>
+
+        <!--tabs-->
+        <ion-tabs color="greenish">
+
+          <ion-tab-bar slot="bottom" color="greenish" style="border-radius:10px 10px 0 0; border-color: #7eb788; padding:14px;">
+           
+            <!--Progress page-->
+            <ion-tab-button>
+                <ion-icon name="stats-chart" color="light"></ion-icon>
+                <ion-label color="light">Progress</ion-label>
+            </ion-tab-button>
+
+            <!--Recipes page-->
+            <ion-tab-button>
+                <ion-icon name="fast-food" color="light"></ion-icon>
+                <ion-label color="light">Recipes</ion-label>
+            </ion-tab-button>
+
+            <!--Food Diary-->
+            <ion-tab-button>
+                <ion-icon name="book" color="light"></ion-icon>
+                <ion-label color="light">Food Diary</ion-label>
+            </ion-tab-button>
+
+        </ion-tab-bar>
+
+    </ion-tabs>
+
+        </ion-tabs>
+   
+            </ion-content>
+            </ion-app>
+            
+  </app-root>
+</body>
+
+</html>
