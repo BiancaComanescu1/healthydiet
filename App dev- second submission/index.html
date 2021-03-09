@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Home Page</title>
+
+
+
+  <meta name="color-scheme" content="white" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+ 
+
+ 
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+
+</head>
+
+<body>
+  <app-root>
+
+    <ion-app>
+
+      <ion-tabs id="healthy-diet-tb">
+
+      
+            
+
+              <!--progress-page-->
+              
+
+                <ion-header>
+                  <!--making the toolbar rounded-->
+                    <ion-toolbar color="greenish" style="border-radius:0 0 10px 10px;">
+          
+                        <ion-title>HealthyDiet</ion-title>
+          
+                    </ion-toolbar>
+          
+                </ion-header>
+          
+
+                <ion-content>
+                  <ion-tab tab="progress-page">
+          
+                  <ion-list>
+                    <!--not an acutal button, just the display of the goal information which will be added by the user, below-->
+                    <ion-button id="button"color="greenish" style=" margin: 20px 125px 20px 125px" size="block" ><ion-label id="final-goal"></ion-label>kg </ion-button>
+          
+                    <ion-item style=" margin: 40px 30px 0 30px;">
+                      <!--display of current weight which was added by the user previously-->
+                      <ion-label position="floating"  style="color: #7eb788;">Current weight (kg)</ion-label>
+                      <ion-input type="number" id="weight-lbl"></ion-input>
+                    </ion-item>
+                     
+                    <ion-button color="greenish" style="margin:20px 150px 0 150px;" size="block" id="btn-replace-current">OK</ion-button>
+                    
+                   
+                  
+                  <ion-item style="margin: 40px 30px 0 30px;">
+                    <!--the user can overwrite the current weight in this input field-->
+                    <ion-label position="floating" style="color: #7eb788;" >Goal weight</ion-label>
+                    <ion-input type="number" id="goal-lbl"></ion-input>
+                   
+                  </ion-item>
+                  
+                    <ion-button color="greenish" style="margin:20px 150px 0 150px;"size="block"id="btn-replace-goal">OK</ion-button>
+                   <ion-card>
+
+                    <!--Entry log for "Current weight"-->
+                    <ion-item>
+                    <ion-label color="greenish" >Weight entry (from the oldest to the earliest)</ion-label>
+                  
+                  </ion-item>
+                    <ion-list id="list-lbl" style="margin: 20px 20px 0 20px;"></ion-list>
+          
+                  
+                </ion-list>
+              </ion-card>
+                </ion-content>
+              </ion-tab>
+        
+            <!-- FOOD DIARY PAGE -->
+              
+              <ion-tab tab="food-diary">
+
+                <ion-header>
+
+                  <!--making the toolbar rounded-->
+
+                    <ion-toolbar color="greenish" style="border-radius:0 0 10px 10px;">
+          
+                        <ion-title>HealthyDiet</ion-title>
+          
+                    </ion-toolbar>
+          
+                </ion-header>
+          
+                <ion-content>
+                  
+                  
+          
+                  <!--Food Diary page, no actual button-->
+                  <ion-button color="greenish" style=" margin: 50px 125px 50px 125px" size="block"> Food Diary</ion-button>
+                  <ion-card>
+                    <ion-list>
+                  <ion-item style=" margin: 20px 30px 0 30px;">
+          
+                    <!--selecting the day of the week-->
+                    <ion-label  style="color: #7eb788;"><i>Day of the week</i></ion-label>
+                    <ion-select value="Day of the week" interface="popover" id="day-week">
+                    <ion-select-option value="Sunday">Sunday</ion-select-option>
+                    <ion-select-option value="Monday">Monday</ion-select-option>
+                    <ion-select-option value="Tuesday">Tuesday</ion-select-option>
+                    <ion-select-option value="Wednesday">Wednesday</ion-select-option>
+                    <ion-select-option value="Thursday">Thursday</ion-select-option>
+                    <ion-select-option value="Friday">Friday</ion-select-option>
+                    <ion-select-option value="Saturday">Saturday</ion-select-option>
+                    
+                  </ion-item>
+                  
+                  <ion-item style="margin: 10px 30px 0 30px;">
+                    <!--selecting the type of meal-->
+                    <ion-label  style="color: #7eb788;"><i>Type of meal</i></ion-label>
+                    <ion-select value="Type of meal" interface="popover" id="type-meal">
+                      <ion-select-option value="Snack">Snack</ion-select-option>
+                      <ion-select-option value="Breakfast">Breakfast</ion-select-option>
+                      <ion-select-option value="Lunch">Lunch</ion-select-option>
+                      <ion-select-option value="Dinner">Dinner</ion-select-option>
+
+          
+                  </ion-item>
+          
+                  <ion-item style="margin: 10px 30px 0 30px;">
+                    <!--inputing the name of the meal-->
+                    <ion-label position="floating" style="color: #7eb788;" ><i>Name of the meal</i></ion-label>
+                    <ion-input id="name-meal" ></ion-input>
+          
+                  </ion-item>
+                </ion-list>
+          
+                <!--submit button-->
+                  <ion-button color="greenish" style="border-radius:5px; margin: 30px 125px 25px 125px;" size="block" id="food-add"> Submit</ion-button>
+          
+                  <ion-list>
+                  </ion-card>
+                    <!--the output of the function above, using the user's input, after they press submit button-->
+                     <ion-item style="margin: 0 20px 0 5px;">
+          
+                     <ion-label color="greenish" id="output-meal" > </ion-label>
+                     
+          
+                    </ion-item>
+                  </ion-list>
+
+              </ion-tab>
+
+              <!-- RECIPES PAGE -->
+              <ion-tab tab="recipes-page">
+
+                <ion-header>
+                  <!--making the toolbar rounded-->
+                    <ion-toolbar color="greenish" style="border-radius:0 0 10px 10px;">
+          
+                        <ion-title>HealthyDiet</ion-title>
+          
+                    </ion-toolbar>
+          
+                </ion-header>
+          
+                <ion-content>
+          
+                  <ion-list>
+                  <!--"Recipes", name of the page, no actual button-->
+                  <ion-button color="greenish" style=" margin: 30px 125px 20px 125px" size="block"> Recipes</ion-button>
+
+                </ion-list>
+
+                  <ion-card>
+                    <ion-card-content>
+          
+                    <!--RECIPES SELECTION-->
+                      <ion-item >
+                        
+                        <ion-select id="select-output" placeholder="Select Recipe" color="greenish" interface="popover" style="margin:0 0 10px 0;"></ion-select>
+                        
+
+                  </ion-item>
+                  
+
+                    <!--RECIPES OUTPUT-->
+                      <ion-img id="img-display"></ion-img>
+
+                      <ion-list style="margin: 10px 0 0 0;" id="output-list"></ion-list>
+                   
+          
+                  </ion-card-content>
+
+                  
+                  </ion-card>
+                  
+
+
+                      </ion-tab>
+
+             <!--tabs-->
+                
+
+             <ion-tab-bar slot="bottom" color="greenish" style="border-radius:10px 10px 0 0; border-color: #7eb788; padding:14px;">
+                  
+              <!--Progress page-->
+              <ion-tab-button tab="progress-page">
+                  <ion-icon name="stats-chart" color="light"></ion-icon>
+                  <ion-label color="light">Progress</ion-label>
+              </ion-tab-button>
+
+              <!--Recipes page-->
+              <ion-tab-button tab="recipes-page">
+                  <ion-icon name="fast-food" color="light"></ion-icon>
+                  <ion-label color="light">Recipes</ion-label>
+              </ion-tab-button>
+
+              <!--Food Diary-->
+              <ion-tab-button tab="food-diary">
+                  <ion-icon name="book" color="light"></ion-icon>
+                  <ion-label color="light">Food Diary</ion-label>
+              </ion-tab-button>
+
+          </ion-tab-bar>
+             
+            </ion-tabs>
+              </ion-app>
+              <script src="app.js"></script>
+            
+  </app-root>
+ 
+</body>
+
+</html>
