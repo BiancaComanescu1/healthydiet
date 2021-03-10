@@ -202,6 +202,36 @@ function createSelectOption(aName){
     outputSelect.appendChild(newItem);
 }
 
+//local storage
+
+document.querySelector('#foodDiary').addEventListener('#food-add', function(e){
+
+    const task = document.querySelector('#day-week').value;
+    const task2 = document.querySelector('#type-meal').value;
+    const task3 = document.querySelector('#name-meal').value;
+
+    let tasks;
+    if (localStorage.getItem('tasks') === null){
+        tasks=[]; 
+       } else{
+           tasks = JSON.parse(localStorage.getItem('tasks'));
+       }
+
+       tasks.push(task);
+       tasks.push(task2);
+       tasks.push(task3);
+
+       localStorage.setItem('tasks', JSON.stringify(tasks));
+       
+
+       const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+       tasks.forEach(function(task){
+           console.log(task)
+       })
+})
+
+
 
 
 
